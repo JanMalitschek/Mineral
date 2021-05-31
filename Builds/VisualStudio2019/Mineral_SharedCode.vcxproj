@@ -141,6 +141,8 @@
     <ClCompile Include="..\..\Source\Nodes\DummyNode.cpp"/>
     <ClCompile Include="..\..\Source\Nodes\Node.cpp"/>
     <ClCompile Include="..\..\Source\Nodes\NodeEditor.cpp"/>
+    <ClCompile Include="..\..\Source\LookAndFeel\LookAndFeel.cpp"/>
+    <ClCompile Include="..\..\Source\LookAndFeel\Themes.cpp"/>
     <ClCompile Include="..\..\Source\CustomToolbar.cpp"/>
     <ClCompile Include="..\..\Source\PluginProcessor.cpp"/>
     <ClCompile Include="..\..\Source\PluginEditor.cpp"/>
@@ -1700,6 +1702,7 @@
     <ClInclude Include="..\..\Source\Utility\simdInt.h"/>
     <ClInclude Include="..\..\Source\LookAndFeel\Colors.h"/>
     <ClInclude Include="..\..\Source\LookAndFeel\LookAndFeel.h"/>
+    <ClInclude Include="..\..\Source\LookAndFeel\Themes.h"/>
     <ClInclude Include="..\..\Source\CustomToolbar.h"/>
     <ClInclude Include="..\..\Source\PluginProcessor.h"/>
     <ClInclude Include="..\..\Source\PluginEditor.h"/>

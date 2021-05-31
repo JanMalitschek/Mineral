@@ -8,12 +8,14 @@
 
 #include "PluginProcessor.h"
 #include "PluginEditor.h"
+#include "LookAndFeel/Themes.h"
 
 //==============================================================================
 NewProjectAudioProcessorEditor::NewProjectAudioProcessorEditor (NewProjectAudioProcessor& p)
     : AudioProcessorEditor (&p), audioProcessor (p)
 {
     setSize (800, 600);
+    Theme::createStandardThemes();
 
     addAndMakeVisible(nge);
 
@@ -29,13 +31,14 @@ NewProjectAudioProcessorEditor::NewProjectAudioProcessorEditor (NewProjectAudioP
 
 NewProjectAudioProcessorEditor::~NewProjectAudioProcessorEditor()
 {
+    Theme::deleteThemes();
 }
 
 //==============================================================================
 void NewProjectAudioProcessorEditor::paint (juce::Graphics& g)
 {
     // (Our component is opaque, so we must completely fill the background with a solid colour)
-    g.fillAll (BACKGROUND_COLOR);
+    g.fillAll (Theme::current->backgroundColor);
 }
 
 void NewProjectAudioProcessorEditor::resized()

@@ -30,7 +30,10 @@
       </GROUP>
       <GROUP id="{84BE50AC-89C2-AFFF-16DB-6B631692613F}" name="LookAndFeel">
         <FILE id="cqpNOv" name="Colors.h" compile="0" resource="0" file="Source/LookAndFeel/Colors.h"/>
+        <FILE id="LFDcFP" name="LookAndFeel.cpp" compile="1" resource="0" file="Source/LookAndFeel/LookAndFeel.cpp"/>
         <FILE id="CgPOvn" name="LookAndFeel.h" compile="0" resource="0" file="Source/LookAndFeel/LookAndFeel.h"/>
+        <FILE id="snvPdd" name="Themes.cpp" compile="1" resource="0" file="Source/LookAndFeel/Themes.cpp"/>
+        <FILE id="HSWxSv" name="Themes.h" compile="0" resource="0" file="Source/LookAndFeel/Themes.h"/>
       </GROUP>
       <FILE id="eRsoiq" name="CustomToolbar.cpp" compile="1" resource="0"
             file="Source/CustomToolbar.cpp"/>

@@ -1,5 +1,6 @@
 #include "CustomToolbar.h"
 #include "Nodes/Graphs/NodeGraphEditor.h"
+#include "LookAndFeel/Themes.h"
 
 CustomToolbar::CustomToolbar() {}
 CustomToolbar::CustomToolbar(NodeGraphEditor* nge) {
@@ -12,7 +13,7 @@ CustomToolbar::CustomToolbar(NodeGraphEditor* nge) {
 }
 void CustomToolbar::paint(Graphics& g) {
 	int width = getWidth(), height = getHeight();
-	g.setColour(HEADER_COLOR);
+	g.setColour(Theme::current->headerColor);
 	g.fillRect(0, 0, width, height);
 
 	g.setColour(SHADOW);

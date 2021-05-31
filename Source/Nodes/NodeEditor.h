@@ -13,7 +13,7 @@ class NodeGraphEditor;
 class NodeEditor : public Component, public MouseListener, public ButtonListener {
 public:
 	NodeEditor();
-	NodeEditor(Node* processor, NodeGraphEditor* nge, String title, int x, int y);
+	NodeEditor(Node* processor, NodeGraphEditor* nge, String title, Colour mainColor, int x, int y);
 	~NodeEditor();
 	virtual void paint(Graphics&) override;
 	virtual void resized() override;
@@ -25,12 +25,14 @@ public:
 	Point<int> getOutputPosition();
 	Point<int> getInputPosition(int index);
 	Node* processor;
+	Colour getMainColor();
 protected:
 	NodeGraphEditor* nge;
 	Font boldFont = Font(Typeface::createSystemTypefaceFor(BinaryData::Bebas_ttf, (size_t)BinaryData::Bebas_ttfSize));
 	Font titleFont = Font(Typeface::createSystemTypefaceFor(BinaryData::Bahnschrift_ttf, (size_t)BinaryData::Bahnschrift_ttfSize));
 	String title;
 	int width, height;
+	Colour mainColor;
 private:
 	ComponentDragger dragger;
 
@@ -39,7 +41,7 @@ private:
 
 	LookAndFeelInputs laF_Inputs;
 	std::vector<std::unique_ptr<TextButton>> inputSockets;
-	LookAndFeelOuputs laF_Ouputs;
+	LookAndFeelOutputs laF_Outputs;
 	TextButton outputSocket;
 };
 

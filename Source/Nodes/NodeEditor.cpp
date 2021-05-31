@@ -1,5 +1,6 @@
 #include "NodeEditor.h"
 #include "Graphs/NodeGraphEditor.h"
+#include "../LookAndFeel/Themes.h"
 
 NodeEditor::NodeEditor() {
 	this->processor = nullptr;
@@ -7,10 +8,11 @@ NodeEditor::NodeEditor() {
 	this->width = 100;
 	this->height = 80;
 }
-NodeEditor::NodeEditor(Node* processor, NodeGraphEditor* nge, String title, int width, int height) {
+NodeEditor::NodeEditor(Node* processor, NodeGraphEditor* nge, String title, Colour mainColor, int width, int height) {
 	this->processor = processor;
 	this->nge = nge;
 	this->title = title;
+	this->mainColor = mainColor;
 	this->width = width;
 	this->height = height;
 
@@ -23,11 +25,13 @@ NodeEditor::NodeEditor(Node* processor, NodeGraphEditor* nge, String title, int 
 		inputSockets.push_back(std::unique_ptr<TextButton>(new TextButton()));
 		inputSockets[i]->setButtonText("");
 		inputSockets[i]->setLookAndFeel(&laF_Inputs);
+		inputSockets[i]->setColour(TextButton::ColourIds::buttonColourId, this->mainColor);
 		inputSockets[i]->addListener(this);
 		addAndMakeVisible(inputSockets[i].get());
 	}
 	outputSocket.setButtonText("");
-	outputSocket.setLookAndFeel(&laF_Ouputs);
+	outputSocket.setLookAndFeel(&laF_Outputs);
+	outputSocket.setColour(TextButton::ColourIds::buttonColourId, this->mainColor);
 	outputSocket.addListener(this);
 	addAndMakeVisible(outputSocket);
 }
@@ -37,7 +41,7 @@ NodeEditor::~NodeEditor() {
 void NodeEditor::paint(Graphics& g) {
 	Path background;
 	background.addRoundedRectangle(0, 0, width, height, 5, 5, true, true, true, true);
-	g.setColour(NODE_BACKGROUND_COLOR);
+	g.setColour(Theme::current->nodeBackgroundColor);
 	g.fillPath(background);
 
 	g.setGradientFill(ColourGradient(SHADOW, 0, 20, CLEAR, 0, 30, false));
@@ -101,4 +105,7 @@ Point<int> NodeEditor::getOutputPosition() {
 Point<int> NodeEditor::getInputPosition(int index) {
 	jassert(index < inputSockets.size());
 	return inputSockets[index]->getPosition() + Point<int>(inputSockets[index]->getWidth() / 2, inputSockets[index]->getHeight() / 2);
+}
+Colour NodeEditor::getMainColor() {
+	return mainColor;
 }

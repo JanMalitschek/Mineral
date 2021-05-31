@@ -1,5 +1,6 @@
 #include "NodeGraphEditor.h"
 #include "../DummyNode.h"
+#include "../../LookAndFeel/Themes.h"
 
 NodeGraphEditor::NodeGraphEditor() : toolbar(this) {
 	addAndMakeVisible(toolbar);
@@ -47,7 +48,6 @@ void NodeGraphEditor::paintOverChildren(Graphics& g) {
 		std::vector<Node*>& inputs = nodeEditors[i]->processor->getInputs();
 		for(int j = 0; j < inputs.size(); j++){
 			if (inputs[j] != nullptr) {
-				DBG(j);
 				Point<int> startPos = inputs[j]->editor->getPosition() + inputs[j]->editor->getOutputPosition();
 				Point<int> startPos2 = startPos + Point<int>(20, 0);
 				Point<int> endPos2 = nodeEditors[i]->getPosition() + nodeEditors[i]->getInputPosition(j);
@@ -58,7 +58,7 @@ void NodeGraphEditor::paintOverChildren(Graphics& g) {
 				connection.lineTo(endPos.toFloat());
 				connection.lineTo(endPos2.toFloat());
 				PathStrokeType stroke = PathStrokeType(6, PathStrokeType::JointStyle::beveled, PathStrokeType::EndCapStyle::rounded);
-				g.setColour(MAIN_COLOR_1);
+				g.setGradientFill(ColourGradient(inputs[j]->editor->getMainColor(), startPos2.toFloat(), nodeEditors[i]->getMainColor(), endPos.toFloat(), false));
 				g.strokePath(connection, stroke);
 			}
 		}

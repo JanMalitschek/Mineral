@@ -15,12 +15,10 @@ Node::~Node() {
 void Node::connectInput(int index, Node* other) {
 	jassert(index < numInputs);
 	inputs[index] = other;
-	DBG("Connected!");
 }
 void Node::disconnectInput(int index) {
 	jassert(index < numInputs);
 	inputs[index] = nullptr;
-	DBG("Disconnected!");
 }
 void Node::disconnectAll() {
 	for (int i = 0; i < numInputs; i++)

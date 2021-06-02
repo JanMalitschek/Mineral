@@ -22,10 +22,12 @@ public:
 	void mouseDrag(const MouseEvent&) override;
 	void buttonClicked(Button*) override;
 	void setPosition(int x, int y);
+	void translate(Point<int> offset);
 	Point<int> getOutputPosition();
 	Point<int> getInputPosition(int index);
 	Node* processor;
 	Colour getMainColor();
+	bool marked;
 protected:
 	NodeGraphEditor* nge;
 	Font boldFont = Font(Typeface::createSystemTypefaceFor(BinaryData::Bebas_ttf, (size_t)BinaryData::Bebas_ttfSize));

@@ -16,6 +16,10 @@
                 file="Source/Nodes/Graphs/NodeGraphEditor.cpp"/>
           <FILE id="b5wAWW" name="NodeGraphEditor.h" compile="0" resource="0"
                 file="Source/Nodes/Graphs/NodeGraphEditor.h"/>
+          <FILE id="hBoWp1" name="NodeGraphProcessor.cpp" compile="1" resource="0"
+                file="Source/Nodes/Graphs/NodeGraphProcessor.cpp"/>
+          <FILE id="BM1fQA" name="NodeGraphProcessor.h" compile="0" resource="0"
+                file="Source/Nodes/Graphs/NodeGraphProcessor.h"/>
         </GROUP>
         <FILE id="ver4LU" name="DummyNode.cpp" compile="1" resource="0" file="Source/Nodes/DummyNode.cpp"/>
         <FILE id="oFZ20p" name="DummyNode.h" compile="0" resource="0" file="Source/Nodes/DummyNode.h"/>

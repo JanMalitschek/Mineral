@@ -14,12 +14,27 @@ NodeEditor* NodeGraphEditor::addNodeImmediate(NodeType type, int x, int y) {
 	NodeEditor* addedNode = nodeEditors[nodeEditors.size() - 1].get();
 	addedNode->setPosition(x, y);
 	addAndMakeVisible(*addedNode);
+	updateNodeTransforms();
+	setMouseCursor(MouseCursor::NormalCursor);
+	currentMode = kIdling;
 	return addedNode;
 }
 void NodeGraphEditor::addNode(NodeType type) {
 	currentMode = kPlacing;
 	currentPlacingNodeType = type;
 	setMouseCursor(MouseCursor::CrosshairCursor);
+}
+void NodeGraphEditor::removeNode(NodeEditor* node) {
+	node->processor->disconnectAll();
+	for (int i = 0; i < nodeEditors.size(); i++)
+		if (nodeEditors[i].get() != node)
+			nodeEditors[i]->processor->disconnectInput(node->processor);
+	for (int i = 0; i < nodeEditors.size(); i++)
+		if (nodeEditors[i].get() == node) {
+			removeChildComponent(node);
+			nodeEditors.erase(nodeEditors.begin() + i);
+		}
+	repaint();
 }
 void NodeGraphEditor::beginConnecting(NodeEditor* source) {
 	currentMode = kConnecting;
@@ -28,11 +43,18 @@ void NodeGraphEditor::beginConnecting(NodeEditor* source) {
 }
 NodeEditor* NodeGraphEditor::endConnecting() {
 	if (currentMode == kConnecting) {
+		setMouseCursor(MouseCursor::NormalCursor);
 		currentMode = kIdling;
 		return currentSource;
 	}
 	return nullptr;
 }
+void NodeGraphEditor::updateNodeTransforms() {
+	for (int i = 0; i < nodeEditors.size(); i++) {
+		
+	}
+}
+
 void NodeGraphEditor::paint(Graphics& g) {
 	int width = getWidth(), height = getHeight();
 	g.setColour(SHADOW);
@@ -63,6 +85,18 @@ void NodeGraphEditor::paintOverChildren(Graphics& g) {
 			}
 		}
 	}
+	if (currentMode == kConnecting) {
+		Point<int> startPos = currentSource->getPosition() + currentSource->getOutputPosition();
+		Point<int> startPos2 = startPos + Point<int>(20, 0);
+		Point<int> endPos = currentMousePos;
+		Path connection;
+		connection.startNewSubPath(startPos.toFloat());
+		connection.lineTo(startPos2.toFloat());
+		connection.lineTo(endPos.toFloat());
+		PathStrokeType stroke = PathStrokeType(6, PathStrokeType::JointStyle::beveled, PathStrokeType::EndCapStyle::rounded);
+		g.setColour(currentSource->getMainColor());
+		g.strokePath(connection, stroke);
+	}
 }
 void NodeGraphEditor::resized() {
 	toolbar.setBounds(0, 0, getWidth(), 30);
@@ -85,4 +119,33 @@ void NodeGraphEditor::mouseDown(const MouseEvent& event) {
 		currentMode = kIdling;
 		break;
 	}	
+	if (!movingNodes && event.mods.isLeftButtonDown()) {
+		movingNodes = true;
+		previousMousePos = event.position.toInt();
+	}
+}
+void NodeGraphEditor::mouseMove(const MouseEvent& event) {
+	currentMousePos = event.position.toInt();
+	if (currentMode == kConnecting)
+		repaint();
+}
+void NodeGraphEditor::mouseDrag(const MouseEvent& event) {
+	currentMousePos = event.position.toInt();
+	if (movingNodes) {
+		Point<int> offset = currentMousePos - previousMousePos;
+		previousMousePos = currentMousePos;
+		for (int i = 0; i < nodeEditors.size(); i++) {
+			nodeEditors[i]->translate(offset);
+		}
+		repaint();
+	}
+}
+void NodeGraphEditor::mouseUp(const MouseEvent& event) {
+	if (movingNodes) {
+		movingNodes = false;
+	}
+}
+void NodeGraphEditor::mouseWheelMove(const MouseEvent& event, const MouseWheelDetails& wheel) {
+	zoomFactor = jlimit<float>(0.2f, 3.0f, zoomFactor + wheel.deltaY);
+	DBG(zoomFactor);
 }

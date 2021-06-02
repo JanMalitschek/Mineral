@@ -134,6 +134,16 @@ void NewProjectAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, j
     auto totalNumInputChannels  = getTotalNumInputChannels();
     auto totalNumOutputChannels = getTotalNumOutputChannels();
 
+    MidiMessage message(0);
+    MidiBuffer::Iterator midiIterator(midiMessages);
+    int messageFrame;
+    while (midiIterator.getNextEvent(message, messageFrame)) {
+        if (message.isNoteOn())
+            currentMidiNote = message.getNoteNumber();
+        else if (message.isNoteOff() && message.getNoteNumber() == currentMidiNote)
+            currentMidiNote = -1;
+    }
+
     // In case we have more outputs than inputs, this code clears any output
     // channels that didn't contain input data, (because these aren't
     // guaranteed to be empty - they may contain garbage).

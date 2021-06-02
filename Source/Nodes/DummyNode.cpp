@@ -15,5 +15,5 @@ void DummyNodeEditor::paint(Graphics& g) {
 	NodeEditor::paint(g);
 	g.setFont(boldFont);
 	g.setColour(Theme::current->headerColor);
-	g.drawFittedText("It does nothing!", 20, 20, width - 40, height - 20, Justification::centred, 1);
+	g.drawFittedText("It does\nNOTHING!", 20, 20, width - 40, height - 20, Justification::centred, 2);
 }

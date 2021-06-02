@@ -361,6 +361,9 @@
     <ClCompile Include="..\..\Source\Nodes\Graphs\NodeGraphEditor.cpp">
       <Filter>Mineral\Source\Nodes\Graphs</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Nodes\Graphs\NodeGraphProcessor.cpp">
+      <Filter>Mineral\Source\Nodes\Graphs</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Nodes\DummyNode.cpp">
       <Filter>Mineral\Source\Nodes</Filter>
     </ClCompile>
@@ -2071,6 +2074,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Source\Nodes\Graphs\NodeGraphEditor.h">
+      <Filter>Mineral\Source\Nodes\Graphs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Nodes\Graphs\NodeGraphProcessor.h">
       <Filter>Mineral\Source\Nodes\Graphs</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Nodes\DummyNode.h">

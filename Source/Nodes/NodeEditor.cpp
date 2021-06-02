@@ -19,6 +19,7 @@ NodeEditor::NodeEditor(Node* processor, NodeGraphEditor* nge, String title, Colo
 	header.setButtonText(this->title);
 	header.setLookAndFeel(&laF_Header);
 	header.addMouseListener(this, true);
+	header.setColour(TextButton::ColourIds::buttonColourId, this->mainColor);
 	addAndMakeVisible(header);
 
 	for (int i = 0; i < this->processor->getNumInputs(); i++) {
@@ -69,15 +70,21 @@ void NodeEditor::mouseDown(const MouseEvent& event) {
 	else if (event.mods.isRightButtonDown()) {
 		PopupMenu menu;
 		menu.addItem(1, "Remove");
-		menu.show();
+		switch (menu.show()) {
+		case 1:
+			nge->removeNode(this);
+			break;
+		}
 	}
 }
 void NodeEditor::mouseUp(const MouseEvent& event) {
 	header.setMouseCursor(MouseCursor::NormalCursor);
 }
 void NodeEditor::mouseDrag(const MouseEvent& event) {
-	if (event.originalComponent == &header)
+	if (event.originalComponent == &header) {
 		dragger.dragComponent(this, event, nullptr);
+		nge->repaint();
+	}
 }
 void NodeEditor::buttonClicked(Button* button) {
 	if (button == &outputSocket) {
@@ -98,6 +105,9 @@ void NodeEditor::buttonClicked(Button* button) {
 }
 void NodeEditor::setPosition(int x, int y) {
 	setBounds(x, y, width, height);
+}
+void NodeEditor::translate(Point<int> offset) {
+	setBounds(getPosition().x + offset.x, getPosition().y + offset.y, width, height);
 }
 Point<int> NodeEditor::getOutputPosition() {
 	return Point<int>(getWidth() - 10, 20 + (getHeight() - 20) / 2);

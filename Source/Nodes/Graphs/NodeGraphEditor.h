@@ -16,10 +16,15 @@ public:
 	NodeGraphEditor();
 	NodeEditor* addNodeImmediate(NodeType type, int x, int y);
 	void addNode(NodeType type);
+	void removeNode(NodeEditor* node);
 	void beginConnecting(NodeEditor* source);
 	NodeEditor* endConnecting();
 private:
 	std::vector<std::unique_ptr<NodeEditor>> nodeEditors;
+	Point<int> previousMousePos;
+	bool movingNodes;
+	float zoomFactor = 1.0f;
+	void updateNodeTransforms();
 
 	CustomToolbar toolbar;
 
@@ -36,8 +41,13 @@ private:
 	EditingMode currentMode;
 	NodeType currentPlacingNodeType = kDummy;
 	NodeEditor* currentSource;
+	Point<int> currentMousePos;
 
 	void mouseDown(const MouseEvent& event) override;
+	void mouseDrag(const MouseEvent& event) override;
+	void mouseMove(const MouseEvent& event) override;
+	void mouseUp(const MouseEvent& event) override;
+	void mouseWheelMove(const MouseEvent& event, const MouseWheelDetails& wheel) override;
 };
 
 #endif

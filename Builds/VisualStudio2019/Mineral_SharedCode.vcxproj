@@ -138,6 +138,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\Nodes\Graphs\NodeGraphEditor.cpp"/>
+    <ClCompile Include="..\..\Source\Nodes\Graphs\NodeGraphProcessor.cpp"/>
     <ClCompile Include="..\..\Source\Nodes\DummyNode.cpp"/>
     <ClCompile Include="..\..\Source\Nodes\Node.cpp"/>
     <ClCompile Include="..\..\Source\Nodes\NodeEditor.cpp"/>
@@ -1695,6 +1696,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Source\Nodes\Graphs\NodeGraphEditor.h"/>
+    <ClInclude Include="..\..\Source\Nodes\Graphs\NodeGraphProcessor.h"/>
     <ClInclude Include="..\..\Source\Nodes\DummyNode.h"/>
     <ClInclude Include="..\..\Source\Nodes\Node.h"/>
     <ClInclude Include="..\..\Source\Nodes\NodeEditor.h"/>

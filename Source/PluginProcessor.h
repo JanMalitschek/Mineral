@@ -54,6 +54,7 @@ public:
     void setStateInformation (const void* data, int sizeInBytes) override;
 
 private:
+    int currentMidiNote = -1;
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (NewProjectAudioProcessor)
 };

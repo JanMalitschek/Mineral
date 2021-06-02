@@ -96,13 +96,14 @@ void LookAndFeelHeader::drawButtonBackground(Graphics& g, Button& button, const 
 	Rectangle<int> bounds = button.getBounds();
 	int width = bounds.getWidth(), height = bounds.getHeight();
 
+	Colour mainColor = button.findColour(TextButton::ColourIds::buttonColourId);
 	if (isMouseOverButton) {
-		g.setColour(Theme::current->headerColor.darker(0.1f));
+		g.setColour(mainColor.darker(0.1f));
 		if (isButtonDown)
-			g.setColour(Theme::current->headerColor.darker(0.2f));
+			g.setColour(mainColor.darker(0.2f));
 	}
 	else
-		g.setColour(Theme::current->headerColor);
+		g.setColour(mainColor);
 	Path header;
 	header.addRoundedRectangle(0, 0, width, height, 5, 5, true, true, false, false);
 	g.fillPath(header);
@@ -114,7 +115,7 @@ void LookAndFeelHeader::drawButtonText(Graphics& g, TextButton& button, bool isM
 	Rectangle<int> bounds = button.getBounds();
 	int width = bounds.getWidth(), height = bounds.getHeight();
 
-	g.setColour(button.findColour(TextButton::ColourIds::buttonColourId));
+	g.setColour(button.findColour(TextButton::ColourIds::buttonColourId).contrasting(0.8f));
 	g.setFont(titleFont);
 	g.setFont(15);
 	g.drawText(button.getButtonText(), 3, 0, width - 6, height, Justification::centredLeft, false);

@@ -5126,6 +5126,79 @@ static const unsigned char temp_binary_data_1[] =
 
 const char* Bebas_ttf = (const char*) temp_binary_data_1;
 
+//================== MIDI_Note_Icon.svg ==================
+static const unsigned char temp_binary_data_2[] =
+"<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n"
+"<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n"
+"<svg width=\"100%\" height=\"100%\" viewBox=\"0 0 40 40\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xml:space=\"preserve\" xmlns:serif=\"http://www.serif.com/\" style=\"fill-rule:evenodd;clip-ru"
+"le:evenodd;stroke-linejoin:round;stroke-miterlimit:2;\">\n"
+"    <g transform=\"matrix(0.95,0,0,0.95,1,0.994401)\">\n"
+"        <path d=\"M17,39.776C7.382,38.326 0,30.018 0,20C0,8.962 8.962,0 20,0C31.038,0 40,8.962 40,20C40,30.018 32.618,38.326 23,39.776L23,35.5L17,35.5L17,39.776ZM13.842,35.68C7.588,33.22 3.158,27.123 3.158,20C3.158,10.705 10.705,3.158 20,3.158C29.295"
+",3.158 36.842,10.705 36.842,20C36.842,27.123 32.412,33.22 26.158,35.68C26.158,35.68 26.158,32.342 26.158,32.342L13.842,32.342L13.842,35.68Z\" style=\"fill:white;\"/>\n"
+"        <g transform=\"matrix(1,0,0,1,0,-2)\">\n"
+"            <circle cx=\"20\" cy=\"10\" r=\"2\" style=\"fill:white;\"/>\n"
+"        </g>\n"
+"        <g transform=\"matrix(0.707107,-0.707107,0.707107,0.707107,-9.71281,18.5858)\">\n"
+"            <circle cx=\"20\" cy=\"10\" r=\"2\" style=\"fill:white;\"/>\n"
+"        </g>\n"
+"        <g transform=\"matrix(1.11022e-16,-1,1,1.11022e-16,-2,40)\">\n"
+"            <circle cx=\"20\" cy=\"10\" r=\"2\" style=\"fill:white;\"/>\n"
+"        </g>\n"
+"        <g transform=\"matrix(-2.33487e-16,1,-1,-2.33487e-16,42,1.42109e-14)\">\n"
+"            <circle cx=\"20\" cy=\"10\" r=\"2\" style=\"fill:white;\"/>\n"
+"        </g>\n"
+"        <g transform=\"matrix(0.707107,0.707107,-0.707107,0.707107,21.4142,-9.69848)\">\n"
+"            <circle cx=\"20\" cy=\"10\" r=\"2\" style=\"fill:white;\"/>\n"
+"        </g>\n"
+"    </g>\n"
+"    <g transform=\"matrix(14.0486,0,0,14.0486,17.0277,25.0009)\">\n"
+"        <path d=\"M0.044,-0L0.131,-0L0.152,-0.2L0.223,-0.2L0.202,-0L0.289,-0L0.31,-0.2L0.361,-0.2L0.369,-0.278L0.318,-0.278L0.337,-0.461L0.388,-0.461L0.396,-0.539L0.345,-0.539L0.362,-0.7L0.275,-0.7L0.258,-0.539L0.187,-0.539L0.204,-0.7L0.117,-0.7L0.1,"
+"-0.539L0.05,-0.539L0.042,-0.461L0.092,-0.461L0.073,-0.278L0.024,-0.278L0.016,-0.2L0.065,-0.2L0.044,-0ZM0.16,-0.278L0.179,-0.461L0.25,-0.461L0.231,-0.278L0.16,-0.278Z\" style=\"fill:white;fill-rule:nonzero;\"/>\n"
+"    </g>\n"
+"</svg>\n";
+
+const char* MIDI_Note_Icon_svg = (const char*) temp_binary_data_2;
+
+//================== MIDI_Velocity_Icon.svg ==================
+static const unsigned char temp_binary_data_3[] =
+"<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n"
+"<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n"
+"<svg width=\"100%\" height=\"100%\" viewBox=\"0 0 40 40\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xml:space=\"preserve\" xmlns:serif=\"http://www.serif.com/\" style=\"fill-rule:evenodd;clip-ru"
+"le:evenodd;stroke-linejoin:round;stroke-miterlimit:2;\">\n"
+"    <g transform=\"matrix(0.95,0,0,0.95,1,0.994401)\">\n"
+"        <path d=\"M17,39.776C7.382,38.326 0,30.018 0,20C0,8.962 8.962,0 20,0C31.038,0 40,8.962 40,20C40,30.018 32.618,38.326 23,39.776L23,35.5L17,35.5L17,39.776ZM13.842,35.68C7.588,33.22 3.158,27.123 3.158,20C3.158,10.705 10.705,3.158 20,3.158C29.295"
+",3.158 36.842,10.705 36.842,20C36.842,27.123 32.412,33.22 26.158,35.68C26.158,35.68 26.158,32.342 26.158,32.342L13.842,32.342L13.842,35.68Z\" style=\"fill:white;\"/>\n"
+"        <g transform=\"matrix(1,0,0,1,0,-2)\">\n"
+"            <circle cx=\"20\" cy=\"10\" r=\"2\" style=\"fill:white;\"/>\n"
+"        </g>\n"
+"        <g transform=\"matrix(0.707107,-0.707107,0.707107,0.707107,-9.71281,18.5858)\">\n"
+"            <circle cx=\"20\" cy=\"10\" r=\"2\" style=\"fill:white;\"/>\n"
+"        </g>\n"
+"        <g transform=\"matrix(1.11022e-16,-1,1,1.11022e-16,-2,40)\">\n"
+"            <circle cx=\"20\" cy=\"10\" r=\"2\" style=\"fill:white;\"/>\n"
+"        </g>\n"
+"        <g transform=\"matrix(-2.33487e-16,1,-1,-2.33487e-16,42,1.42109e-14)\">\n"
+"            <circle cx=\"20\" cy=\"10\" r=\"2\" style=\"fill:white;\"/>\n"
+"        </g>\n"
+"        <g transform=\"matrix(0.707107,0.707107,-0.707107,0.707107,21.4142,-9.69848)\">\n"
+"            <circle cx=\"20\" cy=\"10\" r=\"2\" style=\"fill:white;\"/>\n"
+"        </g>\n"
+"    </g>\n"
+"    <g transform=\"matrix(1.68584,0,0,1.68584,-13.663,-8.33802)\">\n"
+"        <g transform=\"matrix(8.33333,0,0,8.33333,15.3842,19.7759)\">\n"
+"            <path d=\"M0.118,-0L0.264,-0L0.37,-0.7L0.269,-0.7L0.197,-0.157L0.195,-0.157L0.123,-0.7L0.012,-0.7L0.118,-0Z\" style=\"fill:white;fill-rule:nonzero;\"/>\n"
+"        </g>\n"
+"        <g transform=\"matrix(8.33333,0,0,8.33333,18.5676,19.7759)\">\n"
+"            <path d=\"M0.041,-0L0.341,-0L0.341,-0.1L0.151,-0.1L0.151,-0.315L0.302,-0.315L0.302,-0.415L0.151,-0.415L0.151,-0.6L0.341,-0.6L0.341,-0.7L0.041,-0.7L0.041,-0Z\" style=\"fill:white;fill-rule:nonzero;\"/>\n"
+"        </g>\n"
+"        <g transform=\"matrix(8.33333,0,0,8.33333,21.5926,19.7759)\">\n"
+"            <path d=\"M0.041,-0L0.332,-0L0.332,-0.1L0.151,-0.1L0.151,-0.7L0.041,-0.7L0.041,-0Z\" style=\"fill:white;fill-rule:nonzero;\"/>\n"
+"        </g>\n"
+"    </g>\n"
+"</svg>\n";
+
+const char* MIDI_Velocity_Icon_svg = (const char*) temp_binary_data_3;
+
 
 const char* getNamedResource (const char* resourceNameUTF8, int& numBytes)
 {
@@ -5139,6 +5212,8 @@ const char* getNamedResource (const char* resourceNameUTF8, int& numBytes)
     {
         case 0x336cd13f:  numBytes = 355600; return Bahnschrift_ttf;
         case 0x21a59578:  numBytes = 64432; return Bebas_ttf;
+        case 0x33c58aad:  numBytes = 2200; return MIDI_Note_Icon_svg;
+        case 0x4c0de522:  numBytes = 2492; return MIDI_Velocity_Icon_svg;
         default: break;
     }
 
@@ -5149,13 +5224,17 @@ const char* getNamedResource (const char* resourceNameUTF8, int& numBytes)
 const char* namedResourceList[] =
 {
     "Bahnschrift_ttf",
-    "Bebas_ttf"
+    "Bebas_ttf",
+    "MIDI_Note_Icon_svg",
+    "MIDI_Velocity_Icon_svg"
 };
 
 const char* originalFilenames[] =
 {
     "Bahnschrift.ttf",
-    "Bebas.ttf"
+    "Bebas.ttf",
+    "MIDI_Note_Icon.svg",
+    "MIDI_Velocity_Icon.svg"
 };
 
 const char* getNamedResourceOriginalFilename (const char* resourceNameUTF8)

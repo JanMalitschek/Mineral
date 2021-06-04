@@ -6,16 +6,18 @@
 #include "../Node.h"
 #include "../NodeEditor.h"
 #include "../../CustomToolbar.h"
+#include "NodeFactory.h"
 #include <JuceHeader.h>
 #include <vector>
 
 using namespace juce;
+using node_type = NodeFactory::NodeType;
 
 class NodeGraphEditor : public Component, public MouseListener {
 public:
 	NodeGraphEditor();
-	NodeEditor* addNodeImmediate(NodeType type, int x, int y);
-	void addNode(NodeType type);
+	NodeEditor* addNodeImmediate(node_type type, int x, int y);
+	void addNode(node_type type);
 	void removeNode(NodeEditor* node);
 	void beginConnecting(NodeEditor* source);
 	NodeEditor* endConnecting();
@@ -39,7 +41,7 @@ private:
 		kNumEditingModes
 	};
 	EditingMode currentMode;
-	NodeType currentPlacingNodeType = kDummy;
+	node_type currentPlacingNodeType = node_type::kDummy;
 	NodeEditor* currentSource;
 	Point<int> currentMousePos;
 

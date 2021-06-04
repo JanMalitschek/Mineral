@@ -358,6 +358,9 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\Nodes\Graphs\NodeFactory.cpp">
+      <Filter>Mineral\Source\Nodes\Graphs</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Nodes\Graphs\NodeGraphEditor.cpp">
       <Filter>Mineral\Source\Nodes\Graphs</Filter>
     </ClCompile>
@@ -367,10 +370,16 @@
     <ClCompile Include="..\..\Source\Nodes\DummyNode.cpp">
       <Filter>Mineral\Source\Nodes</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Nodes\MIDIInputNode.cpp">
+      <Filter>Mineral\Source\Nodes</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Nodes\Node.cpp">
       <Filter>Mineral\Source\Nodes</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\Nodes\NodeEditor.cpp">
+      <Filter>Mineral\Source\Nodes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Nodes\OutputNode.cpp">
       <Filter>Mineral\Source\Nodes</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\LookAndFeel\LookAndFeel.cpp">
@@ -2073,6 +2082,9 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\Nodes\Graphs\NodeFactory.h">
+      <Filter>Mineral\Source\Nodes\Graphs</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\Nodes\Graphs\NodeGraphEditor.h">
       <Filter>Mineral\Source\Nodes\Graphs</Filter>
     </ClInclude>
@@ -2082,10 +2094,16 @@
     <ClInclude Include="..\..\Source\Nodes\DummyNode.h">
       <Filter>Mineral\Source\Nodes</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\Nodes\MIDIInputNode.h">
+      <Filter>Mineral\Source\Nodes</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\Nodes\Node.h">
       <Filter>Mineral\Source\Nodes</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Nodes\NodeEditor.h">
+      <Filter>Mineral\Source\Nodes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Nodes\OutputNode.h">
       <Filter>Mineral\Source\Nodes</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Utility\simdFloat.h">
@@ -3864,6 +3882,12 @@
       <Filter>Mineral\Resources</Filter>
     </None>
     <None Include="..\..\Resources\Bebas.ttf">
+      <Filter>Mineral\Resources</Filter>
+    </None>
+    <None Include="..\..\Resources\MIDI_Note_Icon.svg">
+      <Filter>Mineral\Resources</Filter>
+    </None>
+    <None Include="..\..\Resources\MIDI_Velocity_Icon.svg">
       <Filter>Mineral\Resources</Filter>
     </None>
     <None Include="..\..\..\..\juce-huckleberry-windows\JUCE\modules\juce_audio_formats\codecs\flac\Flac Licence.txt">

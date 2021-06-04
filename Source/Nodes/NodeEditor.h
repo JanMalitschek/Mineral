@@ -25,6 +25,8 @@ public:
 	void translate(Point<int> offset);
 	Point<int> getOutputPosition();
 	Point<int> getInputPosition(int index);
+	void configureInput(int inputIndex, int x, int y);
+	void configureOuput(int x, int y);
 	Node* processor;
 	Colour getMainColor();
 	bool marked;

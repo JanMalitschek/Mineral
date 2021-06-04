@@ -9,11 +9,6 @@
 
 using namespace juce;
 
-enum NodeType {
-	kDummy,
-	kNumNodeTypes
-};
-
 class NodeEditor;
 
 class Node {

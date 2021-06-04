@@ -2,14 +2,17 @@
 
 NodeGraphProcessor::NodeGraphProcessor(){}
 NodeGraphProcessor::~NodeGraphProcessor() {
+	for (int i = 0; i < nodeProcessors.size(); i++)
+		delete nodeProcessors[i];
+	processingQueue.clear();
 	processingQueue.clear();
 }
 void NodeGraphProcessor::addProcessor(Node* processor) {
-	nodeProcessors.push_back(std::make_unique<Node>(processor));
+	nodeProcessors.push_back(processor);
 }
 void NodeGraphProcessor::removeProcessor(Node* processor) {
 	for(int i = 0; i < nodeProcessors.size(); i++)
-		if (nodeProcessors[i].get() == processor) {
+		if (nodeProcessors[i] == processor) {
 			nodeProcessors.erase(nodeProcessors.begin() + i);
 			return;
 		}
@@ -27,11 +30,12 @@ void NodeGraphProcessor::compile() { //Not super efficient but it does the job
 			int numConnectedInputs, numMarkedInputs;
 			nodeProcessors[i]->getInputInfo(numConnectedInputs, numMarkedInputs);
 			if (numConnectedInputs == 0 || numConnectedInputs == numMarkedInputs) {
-				processingQueue.push_back(nodeProcessors[i].get());
+				processingQueue.push_back(nodeProcessors[i]);
 				nodeProcessors[i]->mark();
 				leftOverNodes--;
 			}
 		}
 	}
-	std::for_each(nodeProcessors.begin(), nodeProcessors.end(), [](const std::unique_ptr<Node>& node) { node->mark(false); });
+	for (int i = 0; i < nodeProcessors.size(); i++)
+		nodeProcessors[i]->mark(false);
 }

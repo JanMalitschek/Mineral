@@ -18,6 +18,8 @@ void Theme::createStandardThemes() {
 	themes.push_back(darkTheme);
 
 	setTheme("Dark (Default)");
+
+	srand(time(0));
 }
 void Theme::deleteThemes() {
 	current = nullptr;

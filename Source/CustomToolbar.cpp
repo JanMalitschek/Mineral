@@ -1,6 +1,7 @@
 #include "CustomToolbar.h"
 #include "Nodes/Graphs/NodeGraphEditor.h"
 #include "LookAndFeel/Themes.h"
+#include "Nodes/Graphs/NodeFactory.h"
 
 CustomToolbar::CustomToolbar() {}
 CustomToolbar::CustomToolbar(NodeGraphEditor* nge) {
@@ -27,5 +28,5 @@ void CustomToolbar::resized() {
 }
 void CustomToolbar::buttonClicked(Button* button) {
 	if (button == &addButton)
-		nge->addNode(kDummy);
+		NodeFactory::displayAddNodeMenu(nge);
 }

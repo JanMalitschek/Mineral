@@ -41,7 +41,7 @@ std::vector<Node*>& Node::getInputs() {
 bool Node::isMarked() {
 	return editor->marked;
 }
-void Node::mark(bool marked = true) {
+void Node::mark(bool marked) {
 	editor->marked = marked;
 }
 int Node::getNumConnectedInputs() {

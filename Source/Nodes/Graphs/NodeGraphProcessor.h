@@ -16,7 +16,7 @@ public:
 	void setBufferSize(int numSamples);
 	void compile();
 private:
-	std::vector<std::unique_ptr<Node>> nodeProcessors;
+	std::vector<Node*> nodeProcessors;
 	std::vector<Node*> processingQueue;
 	int maxSIMDBufferSize = 120;
 };

@@ -34,6 +34,7 @@ NodeEditor::NodeEditor(Node* processor, NodeGraphEditor* nge, String title, Colo
 	outputSocket.setLookAndFeel(&laF_Outputs);
 	outputSocket.setColour(TextButton::ColourIds::buttonColourId, this->mainColor);
 	outputSocket.addListener(this);
+	outputSocket.setBounds(width - 20, 20 + (height - 20) / 2 - 10, 20, 20);
 	addAndMakeVisible(outputSocket);
 }
 NodeEditor::~NodeEditor() {
@@ -51,14 +52,12 @@ void NodeEditor::paint(Graphics& g) {
 void NodeEditor::resized() {
 	header.setBounds(0, 0, width, 20);
 
-	FlexBox fb;
+	/*FlexBox fb;
 	fb.flexDirection = FlexBox::Direction::column;
 	fb.justifyContent = FlexBox::JustifyContent::spaceBetween;
 	for (int i = 0; i < inputSockets.size(); i++)
 		fb.items.add(FlexItem(*inputSockets[i].get()).withFlex(1.0f));
-	fb.performLayout(Rectangle<int>(0, 20, 20, height - 20));
-
-	outputSocket.setBounds(width - 20, 20 + (height - 20) / 2 - 10, 20, 20);
+	fb.performLayout(Rectangle<int>(0, 20, 20, height - 20));*/
 }
 void NodeEditor::mouseDown(const MouseEvent& event) {
 	if (event.mods.isLeftButtonDown()) {
@@ -103,6 +102,14 @@ void NodeEditor::buttonClicked(Button* button) {
 		}
 	}
 }
+void NodeEditor::configureInput(int inputIndex, int x, int y) {
+	jassert(inputIndex < inputSockets.size());
+	inputSockets[inputIndex]->setBounds(x, y, 20, 20);
+	addAndMakeVisible(inputSockets[inputIndex].get());
+}
+void NodeEditor::configureOuput(int x, int y) {
+	outputSocket.setBounds(x, y, 20, 20);
+}
 void NodeEditor::setPosition(int x, int y) {
 	setBounds(x, y, width, height);
 }
@@ -110,7 +117,7 @@ void NodeEditor::translate(Point<int> offset) {
 	setBounds(getPosition().x + offset.x, getPosition().y + offset.y, width, height);
 }
 Point<int> NodeEditor::getOutputPosition() {
-	return Point<int>(getWidth() - 10, 20 + (getHeight() - 20) / 2);
+	return outputSocket.getPosition() + Point<int>(10, 10);
 }
 Point<int> NodeEditor::getInputPosition(int index) {
 	jassert(index < inputSockets.size());

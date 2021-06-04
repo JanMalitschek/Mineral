@@ -1,16 +1,11 @@
 #include "NodeGraphEditor.h"
-#include "../DummyNode.h"
 #include "../../LookAndFeel/Themes.h"
 
 NodeGraphEditor::NodeGraphEditor() : toolbar(this) {
 	addAndMakeVisible(toolbar);
 }
-NodeEditor* NodeGraphEditor::addNodeImmediate(NodeType type, int x, int y) {
-	switch (type) {
-	case kDummy:
-		nodeEditors.push_back(std::unique_ptr<NodeEditor>(new DummyNodeEditor(this)));
-		break;
-	}
+NodeEditor* NodeGraphEditor::addNodeImmediate(node_type type, int x, int y) {
+	NodeFactory::createNodeInstance(type, nodeEditors, this);
 	NodeEditor* addedNode = nodeEditors[nodeEditors.size() - 1].get();
 	addedNode->setPosition(x, y);
 	addAndMakeVisible(*addedNode);
@@ -19,7 +14,7 @@ NodeEditor* NodeGraphEditor::addNodeImmediate(NodeType type, int x, int y) {
 	currentMode = kIdling;
 	return addedNode;
 }
-void NodeGraphEditor::addNode(NodeType type) {
+void NodeGraphEditor::addNode(node_type type) {
 	currentMode = kPlacing;
 	currentPlacingNodeType = type;
 	setMouseCursor(MouseCursor::CrosshairCursor);

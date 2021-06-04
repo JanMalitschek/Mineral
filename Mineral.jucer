@@ -3,15 +3,22 @@
 <JUCERPROJECT id="IJehV0" name="Mineral" projectType="audioplug" useAppConfig="0"
               addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1"
               companyName="Jan Malitschek" pluginFormats="buildStandalone,buildVST3"
-              pluginCharacteristicsValue="pluginIsSynth,pluginWantsMidiIn">
+              pluginCharacteristicsValue="pluginIsSynth,pluginWantsMidiIn"
+              pluginVST3Category="Instrument">
   <MAINGROUP id="SMJLXs" name="Mineral">
     <GROUP id="{EBAB0A3D-CC87-1117-18C4-88D1F6D206EA}" name="Resources">
       <FILE id="f29zaq" name="Bahnschrift.ttf" compile="0" resource="1" file="Resources/Bahnschrift.ttf"/>
       <FILE id="zJ8KMw" name="Bebas.ttf" compile="0" resource="1" file="Resources/Bebas.ttf"/>
+      <FILE id="Iyof8A" name="MIDI_Note_Icon.svg" compile="0" resource="1"
+            file="Resources/MIDI_Note_Icon.svg"/>
+      <FILE id="cgTgV0" name="MIDI_Velocity_Icon.svg" compile="0" resource="1"
+            file="Resources/MIDI_Velocity_Icon.svg"/>
     </GROUP>
     <GROUP id="{25F79473-8E7D-4F9D-6248-9F6EB32FE16E}" name="Source">
       <GROUP id="{49938406-A560-7FF3-1922-A6ACB721A27A}" name="Nodes">
         <GROUP id="{45EC3983-B58B-EB16-9D85-9E24D3814FB5}" name="Graphs">
+          <FILE id="JmjtcW" name="NodeFactory.cpp" compile="1" resource="0" file="Source/Nodes/Graphs/NodeFactory.cpp"/>
+          <FILE id="bCaR83" name="NodeFactory.h" compile="0" resource="0" file="Source/Nodes/Graphs/NodeFactory.h"/>
           <FILE id="KHfosR" name="NodeGraphEditor.cpp" compile="1" resource="0"
                 file="Source/Nodes/Graphs/NodeGraphEditor.cpp"/>
           <FILE id="b5wAWW" name="NodeGraphEditor.h" compile="0" resource="0"
@@ -23,10 +30,15 @@
         </GROUP>
         <FILE id="ver4LU" name="DummyNode.cpp" compile="1" resource="0" file="Source/Nodes/DummyNode.cpp"/>
         <FILE id="oFZ20p" name="DummyNode.h" compile="0" resource="0" file="Source/Nodes/DummyNode.h"/>
+        <FILE id="IsHj7p" name="MIDIInputNode.cpp" compile="1" resource="0"
+              file="Source/Nodes/MIDIInputNode.cpp"/>
+        <FILE id="joHw9N" name="MIDIInputNode.h" compile="0" resource="0" file="Source/Nodes/MIDIInputNode.h"/>
         <FILE id="hzElgp" name="Node.cpp" compile="1" resource="0" file="Source/Nodes/Node.cpp"/>
         <FILE id="E2tucL" name="Node.h" compile="0" resource="0" file="Source/Nodes/Node.h"/>
         <FILE id="es4KmI" name="NodeEditor.cpp" compile="1" resource="0" file="Source/Nodes/NodeEditor.cpp"/>
         <FILE id="d4ju3i" name="NodeEditor.h" compile="0" resource="0" file="Source/Nodes/NodeEditor.h"/>
+        <FILE id="lvRdII" name="OutputNode.cpp" compile="1" resource="0" file="Source/Nodes/OutputNode.cpp"/>
+        <FILE id="f0KJ04" name="OutputNode.h" compile="0" resource="0" file="Source/Nodes/OutputNode.h"/>
       </GROUP>
       <GROUP id="{6211A15F-EE4E-4461-0E82-2F6DDD1BDF11}" name="Utility">
         <FILE id="ta2KtC" name="simdFloat.h" compile="0" resource="0" file="Source/Utility/simdFloat.h"/>

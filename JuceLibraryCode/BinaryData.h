@@ -14,8 +14,14 @@ namespace BinaryData
     extern const char*   Bebas_ttf;
     const int            Bebas_ttfSize = 64432;
 
+    extern const char*   MIDI_Note_Icon_svg;
+    const int            MIDI_Note_Icon_svgSize = 2200;
+
+    extern const char*   MIDI_Velocity_Icon_svg;
+    const int            MIDI_Velocity_Icon_svgSize = 2492;
+
     // Number of elements in the namedResourceList and originalFileNames arrays.
-    const int namedResourceListSize = 2;
+    const int namedResourceListSize = 4;
 
     // Points to the start of a list of resource names.
     extern const char* namedResourceList[];

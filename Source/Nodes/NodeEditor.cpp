@@ -102,13 +102,15 @@ void NodeEditor::buttonClicked(Button* button) {
 		}
 	}
 }
-void NodeEditor::configureInput(int inputIndex, int x, int y) {
+void NodeEditor::configureInput(int inputIndex, int x, int y, bool isVisible) {
 	jassert(inputIndex < inputSockets.size());
 	inputSockets[inputIndex]->setBounds(x, y, 20, 20);
 	addAndMakeVisible(inputSockets[inputIndex].get());
+	inputSockets[inputIndex]->setVisible(isVisible);
 }
-void NodeEditor::configureOuput(int x, int y) {
+void NodeEditor::configureOuput(int x, int y, bool isVisible) {
 	outputSocket.setBounds(x, y, 20, 20);
+	outputSocket.setVisible(isVisible);
 }
 void NodeEditor::setPosition(int x, int y) {
 	setBounds(x, y, width, height);

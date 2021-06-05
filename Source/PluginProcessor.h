@@ -9,6 +9,7 @@
 #pragma once
 
 #include <JuceHeader.h>
+#include "Nodes/Graphs/NodeGraphProcessor.h"
 
 //==============================================================================
 /**
@@ -53,8 +54,10 @@ public:
     void getStateInformation (juce::MemoryBlock& destData) override;
     void setStateInformation (const void* data, int sizeInBytes) override;
 
+    NodeGraphProcessor ngp;
+
 private:
-    int currentMidiNote = -1;
+    int currentMidiNote = 69;
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (NewProjectAudioProcessor)
 };

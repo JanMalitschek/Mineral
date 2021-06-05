@@ -22,6 +22,7 @@ NewProjectAudioProcessor::NewProjectAudioProcessor()
                        )
 #endif
 {
+    ngp = NodeGraphProcessor();
 }
 
 NewProjectAudioProcessor::~NewProjectAudioProcessor()
@@ -93,8 +94,7 @@ void NewProjectAudioProcessor::changeProgramName (int index, const juce::String&
 //==============================================================================
 void NewProjectAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
 {
-    // Use this method as the place to do any pre-playback
-    // initialisation that you need..
+    ngp.setBufferSize(samplesPerBlock);
 }
 
 void NewProjectAudioProcessor::releaseResources()
@@ -139,10 +139,12 @@ void NewProjectAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, j
         MidiBuffer::Iterator midiIterator(midiMessages);
         int messageFrame;
         while (midiIterator.getNextEvent(message, messageFrame)) {
-            if (message.isNoteOn())
-                currentMidiNote = message.getNoteNumber();
-            else if (message.isNoteOff() && message.getNoteNumber() == currentMidiNote)
-                currentMidiNote = -1;
+            if (message.isNoteOn()) {
+                ngp.currentMIDINote = message.getNoteNumber();
+                ngp.currentMIDIVelocity = message.getFloatVelocity();
+            }
+            else if (message.isNoteOff() && message.getNoteNumber() == ngp.currentMIDINote)
+                ngp.currentMIDIVelocity = 0.0f;
         }
     }
 

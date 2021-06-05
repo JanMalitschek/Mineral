@@ -10,8 +10,15 @@
 using namespace juce;
 
 class NodeEditor;
+class NodeGraphProcessor;
+
+#define IS_INPUT_CONNECTED(idx) inputs[idx] != nullptr
 
 class Node {
+public:
+	NodeEditor* editor;
+	NodeGraphProcessor* ngp;
+	SIMDFloat* buffer;
 public:
 	Node(int numInputs);
 	~Node();
@@ -23,7 +30,6 @@ public:
 	void disconnectAll();
 	int getNumInputs();
 	std::vector<Node*>& getInputs();
-	NodeEditor* editor;
 	bool isMarked();
 	void mark(bool marked = true);
 	int getNumConnectedInputs();
@@ -32,7 +38,6 @@ public:
 protected:
 	std::vector<Node*> inputs;
 	int numInputs;
-	std::vector<SIMDFloat> buffer;
 };
 
 #endif

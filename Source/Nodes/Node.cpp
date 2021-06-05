@@ -1,19 +1,22 @@
 #include "Node.h"
 #include "NodeEditor.h"
+#include "Graphs/NodeGraphProcessor.h"
 
 Node::Node(int numInputs) {
 	this->numInputs = numInputs;
 	for (int i = 0; i < numInputs; i++)
 		inputs.push_back(nullptr);
+	ngp->addProcessor(this);
 }
 Node::~Node() {
 	disconnectAll();
 	for (int i = 0; i < numInputs; i++)
 		delete inputs[i];
 	inputs.clear();
+	delete buffer;
 }
 void Node::initBuffer(int bufferSize) {
-	buffer.reserve(bufferSize);
+	buffer = (SIMDFloat*)malloc(sizeof(SIMDFloat) * bufferSize);
 }
 void Node::connectInput(int index, Node* other) {
 	jassert(index < numInputs);

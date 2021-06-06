@@ -18,6 +18,7 @@ NewProjectAudioProcessorEditor::NewProjectAudioProcessorEditor (NewProjectAudioP
     Theme::createStandardThemes();
 
     addAndMakeVisible(nge);
+    nge.ngp = &audioProcessor.ngp;
 
     knob.setName("Knob");
     knob.setSliderStyle(Slider::SliderStyle::RotaryHorizontalVerticalDrag);

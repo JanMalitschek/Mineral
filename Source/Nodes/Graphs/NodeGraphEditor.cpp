@@ -7,6 +7,7 @@ NodeGraphEditor::NodeGraphEditor() : toolbar(this) {
 NodeEditor* NodeGraphEditor::addNodeImmediate(node_type type, int x, int y) {
 	NodeFactory::createNodeInstance(type, nodeEditors, this);
 	NodeEditor* addedNode = nodeEditors[nodeEditors.size() - 1].get();
+	ngp->addProcessor(addedNode->processor);
 	addedNode->setPosition(x, y);
 	addAndMakeVisible(*addedNode);
 	updateNodeTransforms();

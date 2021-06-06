@@ -6,7 +6,6 @@ Node::Node(int numInputs) {
 	this->numInputs = numInputs;
 	for (int i = 0; i < numInputs; i++)
 		inputs.push_back(nullptr);
-	ngp->addProcessor(this);
 }
 Node::~Node() {
 	disconnectAll();

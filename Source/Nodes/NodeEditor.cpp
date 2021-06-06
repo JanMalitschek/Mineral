@@ -15,6 +15,7 @@ NodeEditor::NodeEditor(Node* processor, NodeGraphEditor* nge, String title, Colo
 	this->mainColor = mainColor;
 	this->width = width;
 	this->height = height;
+	this->marked = false;
 
 	header.setButtonText(this->title);
 	header.setLookAndFeel(&laF_Header);

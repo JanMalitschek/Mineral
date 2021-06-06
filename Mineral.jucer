@@ -17,8 +17,6 @@
     <GROUP id="{25F79473-8E7D-4F9D-6248-9F6EB32FE16E}" name="Source">
       <GROUP id="{49938406-A560-7FF3-1922-A6ACB721A27A}" name="Nodes">
         <GROUP id="{45EC3983-B58B-EB16-9D85-9E24D3814FB5}" name="Graphs">
-          <FILE id="JmjtcW" name="NodeFactory.cpp" compile="1" resource="0" file="Source/Nodes/Graphs/NodeFactory.cpp"/>
-          <FILE id="bCaR83" name="NodeFactory.h" compile="0" resource="0" file="Source/Nodes/Graphs/NodeFactory.h"/>
           <FILE id="KHfosR" name="NodeGraphEditor.cpp" compile="1" resource="0"
                 file="Source/Nodes/Graphs/NodeGraphEditor.cpp"/>
           <FILE id="b5wAWW" name="NodeGraphEditor.h" compile="0" resource="0"
@@ -28,6 +26,16 @@
           <FILE id="BM1fQA" name="NodeGraphProcessor.h" compile="0" resource="0"
                 file="Source/Nodes/Graphs/NodeGraphProcessor.h"/>
         </GROUP>
+        <GROUP id="{D4B8D3BD-A68F-7401-8857-01C2BA9C6B1C}" name="Utility">
+          <FILE id="CNCsA8" name="ControllableParameter.cpp" compile="1" resource="0"
+                file="Source/Nodes/Utility/ControllableParameter.cpp"/>
+          <FILE id="izt9HS" name="ControllableParameter.h" compile="0" resource="0"
+                file="Source/Nodes/Utility/ControllableParameter.h"/>
+          <FILE id="bjrssh" name="NodeFactory.cpp" compile="1" resource="0" file="Source/Nodes/Utility/NodeFactory.cpp"/>
+          <FILE id="RlmTjE" name="NodeFactory.h" compile="0" resource="0" file="Source/Nodes/Utility/NodeFactory.h"/>
+        </GROUP>
+        <FILE id="fiAjGN" name="ADSRNode.cpp" compile="1" resource="0" file="Source/Nodes/ADSRNode.cpp"/>
+        <FILE id="vpkWI3" name="ADSRNode.h" compile="0" resource="0" file="Source/Nodes/ADSRNode.h"/>
         <FILE id="ver4LU" name="DummyNode.cpp" compile="1" resource="0" file="Source/Nodes/DummyNode.cpp"/>
         <FILE id="oFZ20p" name="DummyNode.h" compile="0" resource="0" file="Source/Nodes/DummyNode.h"/>
         <FILE id="IsHj7p" name="MIDIInputNode.cpp" compile="1" resource="0"

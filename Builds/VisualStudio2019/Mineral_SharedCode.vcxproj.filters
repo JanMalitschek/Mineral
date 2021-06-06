@@ -8,6 +8,9 @@
     <Filter Include="Mineral\Source\Nodes\Graphs">
       <UniqueIdentifier>{1DD72502-024E-B547-36B7-D0CCBE8D2510}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Mineral\Source\Nodes\Utility">
+      <UniqueIdentifier>{BA4A70A5-2A45-1132-3CA4-91342E96F8FF}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Mineral\Source\Nodes">
       <UniqueIdentifier>{08ABF216-4D97-1D8C-7623-8B1451C3AB82}</UniqueIdentifier>
     </Filter>
@@ -358,14 +361,20 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Source\Nodes\Graphs\NodeFactory.cpp">
-      <Filter>Mineral\Source\Nodes\Graphs</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\Nodes\Graphs\NodeGraphEditor.cpp">
       <Filter>Mineral\Source\Nodes\Graphs</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\Nodes\Graphs\NodeGraphProcessor.cpp">
       <Filter>Mineral\Source\Nodes\Graphs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Nodes\Utility\ControllableParameter.cpp">
+      <Filter>Mineral\Source\Nodes\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Nodes\Utility\NodeFactory.cpp">
+      <Filter>Mineral\Source\Nodes\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Nodes\ADSRNode.cpp">
+      <Filter>Mineral\Source\Nodes</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\Nodes\DummyNode.cpp">
       <Filter>Mineral\Source\Nodes</Filter>
@@ -2082,14 +2091,20 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Source\Nodes\Graphs\NodeFactory.h">
-      <Filter>Mineral\Source\Nodes\Graphs</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Source\Nodes\Graphs\NodeGraphEditor.h">
       <Filter>Mineral\Source\Nodes\Graphs</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Nodes\Graphs\NodeGraphProcessor.h">
       <Filter>Mineral\Source\Nodes\Graphs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Nodes\Utility\ControllableParameter.h">
+      <Filter>Mineral\Source\Nodes\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Nodes\Utility\NodeFactory.h">
+      <Filter>Mineral\Source\Nodes\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Nodes\ADSRNode.h">
+      <Filter>Mineral\Source\Nodes</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Nodes\DummyNode.h">
       <Filter>Mineral\Source\Nodes</Filter>

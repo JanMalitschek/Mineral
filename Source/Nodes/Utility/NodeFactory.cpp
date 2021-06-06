@@ -1,9 +1,10 @@
 #include "NodeFactory.h"
-#include "NodeGraphEditor.h"
+#include "../Graphs/NodeGraphEditor.h"
 
 #include "../DummyNode.h"
 #include "../MIDIInputNode.h"
 #include "../OutputNode.h"
+#include "../ADSRNode.h"
 
 void NodeFactory::createNodeInstance(NodeType type, std::vector<std::unique_ptr<NodeEditor>>& nodeEditors, NodeGraphEditor* nge) {
 	switch (type) {
@@ -19,6 +20,9 @@ void NodeFactory::createNodeInstance(NodeType type, std::vector<std::unique_ptr<
 	case NodeType::kOutput:
 		nodeEditors.push_back(std::unique_ptr<NodeEditor>(new OutputNodeEditor(nge)));
 		break;
+	case NodeType::kADSR:
+		nodeEditors.push_back(std::unique_ptr<NodeEditor>(new ADSRNodeEditor(nge)));
+		break;
 	default:
 		nodeEditors.push_back(std::unique_ptr<NodeEditor>(new DummyNodeEditor(nge)));
 		break;
@@ -30,6 +34,7 @@ String NodeFactory::nodeTypeToName(NodeType type) {
 	case NodeType::kMIDINoteInput: return "MIDI Note In";
 	case NodeType::kMIDIVelocityInput: return "MIDI Vel In";
 	case NodeType::kOutput: return "Output";
+	case NodeType::kADSR: return "ADSR Envelope";
 	default: return "DUMMY NODE";
 	}
 }

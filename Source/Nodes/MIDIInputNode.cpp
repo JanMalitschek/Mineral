@@ -37,7 +37,7 @@ void MIDIVelocityInputNode::process(int numSamples) {
 	int simd_idx = 0;
 	float velocity = ngp->currentMIDIVelocity;
 	for (int s = 0; s < numSamples; s += 4, simd_idx++)
-		buffer[simd_idx] = SIMDFloat(velocity);
+		buffer[simd_idx] = SIMDFloat(velocity > 0.0 ? 1.0 : 0.0);
 }
 
 MIDIVelocityInputNodeEditor::MIDIVelocityInputNodeEditor(NodeGraphEditor* nge) : NodeEditor(new MIDIVelocityInputNode(), nge, "Vel In", Theme::getRandomMainColor(), 50, 50) {

@@ -6,7 +6,8 @@
 #include "../Node.h"
 #include "../NodeEditor.h"
 #include "../../CustomToolbar.h"
-#include "NodeFactory.h"
+#include "../Utility/NodeFactory.h"
+#include "NodeGraphProcessor.h"
 #include <JuceHeader.h>
 #include <vector>
 
@@ -14,6 +15,8 @@ using namespace juce;
 using node_type = NodeFactory::NodeType;
 
 class NodeGraphEditor : public Component, public MouseListener {
+public:
+	NodeGraphProcessor* ngp;
 public:
 	NodeGraphEditor();
 	NodeEditor* addNodeImmediate(node_type type, int x, int y);

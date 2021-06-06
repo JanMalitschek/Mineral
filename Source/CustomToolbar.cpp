@@ -1,7 +1,7 @@
 #include "CustomToolbar.h"
 #include "Nodes/Graphs/NodeGraphEditor.h"
 #include "LookAndFeel/Themes.h"
-#include "Nodes/Graphs/NodeFactory.h"
+#include "Nodes/Utility/NodeFactory.h"
 
 CustomToolbar::CustomToolbar() {}
 CustomToolbar::CustomToolbar(NodeGraphEditor* nge) {

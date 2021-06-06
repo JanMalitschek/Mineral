@@ -8,7 +8,8 @@ OutputNode::OutputNode() : Node(1) {
 void OutputNode::process(int numSamples) {
 	int simd_idx = 0;
 	if (IS_INPUT_CONNECTED(0))
-		memcpy(buffer, inputs[0]->buffer, ngp->sizeof_buffer);
+		for (int s = 0; s < numSamples; s += 4, simd_idx++)
+			buffer[simd_idx] = inputs[0]->buffer[simd_idx];
 	else
 		for (int s = 0; s < numSamples; s += 4, simd_idx++)
 			buffer[simd_idx] = SIMDFloat(0.0f);

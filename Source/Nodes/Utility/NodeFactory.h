@@ -14,6 +14,7 @@ public:
 		kMIDINoteInput,
 		kMIDIVelocityInput,
 		kOutput,
+		kADSR,
 		kNumNodeTypes
 	};
 	static void createNodeInstance(NodeType type, std::vector<std::unique_ptr<NodeEditor>>& nodeEditors, NodeGraphEditor* nge);

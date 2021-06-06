@@ -137,9 +137,11 @@
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Source\Nodes\Graphs\NodeFactory.cpp"/>
     <ClCompile Include="..\..\Source\Nodes\Graphs\NodeGraphEditor.cpp"/>
     <ClCompile Include="..\..\Source\Nodes\Graphs\NodeGraphProcessor.cpp"/>
+    <ClCompile Include="..\..\Source\Nodes\Utility\ControllableParameter.cpp"/>
+    <ClCompile Include="..\..\Source\Nodes\Utility\NodeFactory.cpp"/>
+    <ClCompile Include="..\..\Source\Nodes\ADSRNode.cpp"/>
     <ClCompile Include="..\..\Source\Nodes\DummyNode.cpp"/>
     <ClCompile Include="..\..\Source\Nodes\MIDIInputNode.cpp"/>
     <ClCompile Include="..\..\Source\Nodes\Node.cpp"/>
@@ -1698,9 +1700,11 @@
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_gui_extra.cpp"/>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Source\Nodes\Graphs\NodeFactory.h"/>
     <ClInclude Include="..\..\Source\Nodes\Graphs\NodeGraphEditor.h"/>
     <ClInclude Include="..\..\Source\Nodes\Graphs\NodeGraphProcessor.h"/>
+    <ClInclude Include="..\..\Source\Nodes\Utility\ControllableParameter.h"/>
+    <ClInclude Include="..\..\Source\Nodes\Utility\NodeFactory.h"/>
+    <ClInclude Include="..\..\Source\Nodes\ADSRNode.h"/>
     <ClInclude Include="..\..\Source\Nodes\DummyNode.h"/>
     <ClInclude Include="..\..\Source\Nodes\MIDIInputNode.h"/>
     <ClInclude Include="..\..\Source\Nodes\Node.h"/>
